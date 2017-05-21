@@ -363,7 +363,7 @@ class DictObject(MyDict):
         if not isinstance(d, dict):
             raise TypeError("Argument is no dict.")
         # self._dict = d
-        for a, b in d.items():
+        for a, b in list(d.items()):
             attribute_name = self.get_attribute_name_by_key(a)
             self._add_to_object_part(a, b)
             self._attribute_to_key_map[n(attribute_name)] = a
